@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class Lab_22 {
+public class P_22 {
     public static void main(String[] args) {
         int arr[] = {1,2,15,5,17};
         Scanner sc = new Scanner(System.in);
