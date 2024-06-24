@@ -1,4 +1,4 @@
-public class P12 {
+public class P_12 {
     public static void main(String[] args) {
         for (int num = 10; num <= 1000; num++) {
             if (isArmstrong(num)) {
