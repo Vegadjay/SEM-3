@@ -1,7 +1,7 @@
 // . Write a program to find position of the smallest number & the largest number
 // from given n numbers.
 import java.util.Scanner;
-public class Lab_16 {
+public class P_16 {
     public static void main(String[] args) {
         // Making Scanner Object
 
