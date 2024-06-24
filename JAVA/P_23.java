@@ -36,5 +36,6 @@ public class P_23 {
         {
             System.out.print(arr2[i] + " ");
         }
+        sc.close();
     }
 }
