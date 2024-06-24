@@ -1,6 +1,6 @@
 // Get Input From User and add element in that index
 import java.util.*;
-public class Lab_21 {
+public class P_21 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         
