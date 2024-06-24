@@ -1,6 +1,6 @@
 // . Write a program to calculate sum of numbers from m to n.
 import java.util.Scanner;
-public class Lab_14 {
+public class P_14 {
     public static void main(String[] args) {
         // Scanner Object
         Scanner sc = new Scanner(System.in);
