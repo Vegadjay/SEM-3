@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap demo</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <script>
+      var arr = [
+        {
+          createdAt: "Yundt Group",
+          name: "Vicky White",
+          avatar:
+            "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/939.jpg",
+          City: "Chula Vista",
+          Work: "2024-06-25T22:06:25.960Z",
+          id: "1",
+        },
+        {
+          createdAt: "Stehr, Bauch and Brakus",
+          name: "Vicky Wiegand",
+          avatar:
+            "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1104.jpg",
+          City: "Pomona",
+          Work: "2024-06-25T11:36:47.442Z",
+          id: "2",
+        },
+        {
+          createdAt: "Wilkinson - Larkin",
+          name: "Blake Effertz",
+          avatar:
+            "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/202.jpg",
+          City: "Port Charlotte",
+          Work: "2024-06-25T11:02:00.918Z",
+          id: "3",
+        },
+        {
+          createdAt: "Weissnat Group",
+          name: "Carol Reichert II",
+          avatar:
+            "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1101.jpg",
+          City: "Towson",
+          Work: "2024-06-25T04:38:18.448Z",
+          id: "4",
+        },
+        {
+          createdAt: "Kautzer and Sons",
+          name: "Julius Fisher",
+          avatar:
+            "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1047.jpg",
+          City: "Rowland Heights",
+          Work: "2024-06-25T12:38:15.124Z",
+          id: "5",
+        },
+        {
+          createdAt: "Runolfsson - Ernser",
+          name: "Sarah Kuvalis",
+          avatar:
+            "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/51.jpg",
+          City: "Sunnyvale",
+          Work: "2024-06-25T08:03:44.656Z",
+          id: "6",
+        },
+        {
+          createdAt: "Tromp LLC",
+          name: "Simon Carroll",
+          avatar:
+            "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/894.jpg",
+          City: "Milpitas",
+          Work: "2024-06-25T09:58:39.561Z",
+          id: "7",
+        },
+        {
+          createdAt: "Cremin - Russel",
+          name: "Melvin Schimmel",
+          avatar:
+            "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/215.jpg",
+          City: "Janesville",
+          Work: "2024-06-25T04:19:18.060Z",
+          id: "8",
+        },
+        {
+          createdAt: "Connelly, Lubowitz and Bednar",
+          name: "Marion Rath",
+          avatar:
+            "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/20.jpg",
+          City: "Leesburg",
+          Work: "2024-06-25T11:37:42.197Z",
+          id: "9",
+        },
+        {
+          createdAt: "Crona Inc",
+          name: "Kelli Macejkovic DVM",
+          avatar:
+            "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1027.jpg",
+          City: "Aspen Hill",
+          Work: "2024-06-25T04:30:18.563Z",
+          id: "10",
+        },
+        {
+          createdAt: "Ledner and Sons",
+          name: "Jenny D'Amore DVM",
+          avatar:
+            "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/572.jpg",
+          City: "Sioux City",
+          Work: "2024-06-25T08:18:08.507Z",
+          id: "11",
+        },
+        {
+          createdAt: "Willms and Sons",
+          name: "Tonya Christiansen",
+          avatar:
+            "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1142.jpg",
+          City: "Rialto",
+          Work: "2024-06-25T04:57:53.866Z",
+          id: "12",
+        },
+        {
+          createdAt: "Torphy - Smith",
+          name: "Jody Franecki",
+          avatar:
+            "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/637.jpg",
+          City: "Madera",
+          Work: "2024-06-25T15:20:41.443Z",
+          id: "13",
+        },
+        {
+          createdAt: "Abernathy - Walsh",
+          name: "Dr. Seth Price",
+          avatar:
+            "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/947.jpg",
+          City: "Catonsville",
+          Work: "2024-06-25T21:24:48.837Z",
+          id: "14",
+        },
+        {
+          createdAt: "Ferry and Sons",
+          name: "Ms. Carl Carroll Sr.",
+          avatar:
+            "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/183.jpg",
+          City: "Sandy Springs",
+          Work: "2024-06-25T16:07:32.538Z",
+          id: "15",
+        },
+        {
+          createdAt: "Quigley, Considine and Powlowski",
+          name: "Mrs. Jonathan Koelpin IV",
+          avatar:
+            "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1247.jpg",
+          City: "Lansing",
+          Work: "2024-06-25T15:24:53.342Z",
+          id: "16",
+        },
+        {
+          createdAt: "Franey, Osinski and O'Kon",
+          name: "Daniel Ritchie I",
+          avatar:
+            "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/989.jpg",
+          City: "Birmingham",
+          Work: "2024-06-26T01:46:53.115Z",
+          id: "17",
+        },
+        {
+          createdAt: "O'Hara - Labadie",
+          name: "Sue Walsh",
+          avatar:
+            "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1242.jpg",
+          City: "Atascocita",
+          Work: "2024-06-25T18:22:03.836Z",
+          id: "18",
+        },
+        {
+          createdAt: "Friesen - Mosciski",
+          name: "Homer Stoltenberg",
+          avatar:
+            "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/318.jpg",
+          City: "West Palm Beach",
+          Work: "2024-06-25T19:20:15.104Z",
+          id: "19",
+        },
+        {
+          createdAt: "Schowalter LLC",
+          name: "Vicki Dare",
+          avatar:
+            "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/163.jpg",
+          City: "Glen Burnie",
+          Work: "2024-06-25T10:23:35.031Z",
+          id: "20",
+        },
+        {
+          createdAt: "Stracke - Halvorson",
+          name: "Beulah Leuschke",
+          avatar:
+            "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/171.jpg",
+          City: "Coconut Creek",
+          Work: "2024-06-25T21:40:40.516Z",
+          id: "21",
+        },
+        {
+          createdAt: "Rolfson - Wunsch",
+          name: "Guadalupe Haag",
+          avatar:
+            "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/891.jpg",
+          City: "Huntsville",
+          Work: "2024-06-25T13:07:24.782Z",
+          id: "22",
+        },
+        {
+          createdAt: "Rolfson, Bogisich and Kozey",
+          name: "Kenneth Auer",
+          avatar:
+            "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/394.jpg",
+          City: "Hendersonville",
+          Work: "2024-06-25T08:04:02.248Z",
+          id: "23",
+        },
+        {
+          createdAt: "Murphy - Botsford",
+          name: "Julio Lueilwitz",
+          avatar:
+            "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/721.jpg",
+          City: "Kennewick",
+          Work: "2024-06-25T16:49:01.669Z",
+          id: "24",
+        },
+        {
+          createdAt: "Tremblay - Mann",
+          name: "Laura Zieme",
+          avatar:
+            "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1119.jpg",
+          City: "Waldorf",
+          Work: "2024-06-25T23:55:57.712Z",
+          id: "25",
+        },
+        {
+          createdAt: "Legros - Zemlak",
+          name: "Homer O'Keefe",
+          avatar:
+            "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/334.jpg",
+          City: "Sioux City",
+          Work: "2024-06-25T15:16:08.958Z",
+          id: "26",
+        },
+        {
+          createdAt: "Mertz, Rice and Waelchi",
+          name: "Ms. Pedro Nader",
+          avatar:
+            "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/611.jpg",
+          City: "Rocky Mount",
+          Work: "2024-06-25T06:43:46.301Z",
+          id: "27",
+        },
+        {
+          createdAt: "Davis - Smitham",
+          name: "Oliver Hegmann",
+          avatar:
+            "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/909.jpg",
+          City: "Severn",
+          Work: "2024-06-25T21:21:51.025Z",
+          id: "28",
+        },
+        {
+          createdAt: "Halvorson, Padberg and Wilkinson",
+          name: "Mrs. Jimmie Harvey",
+          avatar:
+            "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/295.jpg",
+          City: "Sierra Vista",
+          Work: "2024-06-25T20:09:01.309Z",
+          id: "29",
+        },
+        {
+          createdAt: "Leffler Inc",
+          name: "Jennie Flatley",
+          avatar:
+            "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/240.jpg",
+          City: "Grand Forks",
+          Work: "2024-06-25T07:01:23.398Z",
+          id: "30",
+        },
+        {
+          createdAt: "Baumbach, Flatley and Stokes",
+          name: "Lucia Reinger",
+          avatar:
+            "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/635.jpg",
+          City: "Smyrna",
+          Work: "2024-06-25T15:39:56.664Z",
+          id: "31",
+        },
+        {
+          createdAt: "Kuphal - Murray",
+          name: "Brenda Walsh",
+          avatar:
+            "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/401.jpg",
+          City: "Nampa",
+          Work: "2024-06-25T06:16:59.207Z",
+          id: "32",
+        },
+        {
+          createdAt: "Brekke - Macejkovic",
+          name: "Brent Kertzmann",
+          avatar:
+            "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/180.jpg",
+          City: "Victoria",
+          Work: "2024-06-25T22:19:18.027Z",
+          id: "33",
+        },
+        {
+          createdAt: "Hudson, Reichert and Weber",
+          name: "Thomas Kozey",
+          avatar:
+            "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/587.jpg",
+          City: "Warren",
+          Work: "2024-06-25T10:09:18.383Z",
+          id: "34",
+        },
+        {
+          createdAt: "Zieme LLC",
+          name: "Mrs. Shane Brown",
+          avatar:
+            "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/3.jpg",
+          City: "Pontiac",
+          Work: "2024-06-25T15:34:39.413Z",
+          id: "35",
+        },
+        {
+          createdAt: "Bernier LLC",
+          name: "Jeanette O'Reilly",
+          avatar:
+            "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1194.jpg",
+          City: "Eau Claire",
+          Work: "2024-06-25T07:02:21.263Z",
+          id: "36",
+        },
+        {
+          createdAt: "Lehner, Romaguera and Powlowski",
+          name: "Neil Stroman",
+          avatar:
+            "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/188.jpg",
+          City: "Moreno Valley",
+          Work: "2024-06-25T20:44:20.300Z",
+          id: "37",
+        },
+        {
+          createdAt: "Huels - Volkman",
+          name: "Jan Funk",
+          avatar:
+            "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/203.jpg",
+          City: "Walnut Creek",
+          Work: "2024-06-25T10:46:55.908Z",
+          id: "38",
+        },
+        {
+          createdAt: "Grady Group",
+          name: "Ada McDermott PhD",
+          avatar:
+            "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/672.jpg",
+          City: "Chesterfield",
+          Work: "2024-06-25T17:45:32.886Z",
+          id: "39",
+        },
+        {
+          createdAt: "Langosh - Kertzmann",
+          name: "Kyle Kirlin",
+          avatar:
+            "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1018.jpg",
+          City: "Leesburg",
+          Work: "2024-06-25T07:29:39.934Z",
+          id: "40",
+        },
+        {
+          createdAt: "Koch - Douglas",
+          name: "Winifred Turcotte",
+          avatar:
+            "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/389.jpg",
+          City: "Palm Harbor",
+          Work: "2024-06-25T23:31:17.433Z",
+          id: "41",
+        },
+        {
+          createdAt: "Reynolds - Schimmel",
+          name: "Earnest Moore",
+          avatar:
+            "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/462.jpg",
+          City: "Maple Grove",
+          Work: "2024-06-25T07:42:32.983Z",
+          id: "42",
+        },
+        {
+          createdAt: "Donnelly - Flatley",
+          name: "Donald Turcotte",
+          avatar:
+            "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/940.jpg",
+          City: "Burbank",
+          Work: "2024-06-25T19:50:22.688Z",
+          id: "43",
+        },
+        {
+          createdAt: "Hand and Sons",
+          name: "Santiago Simonis",
+          avatar:
+            "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1109.jpg",
+          City: "Haltom City",
+          Work: "2024-06-25T05:16:56.397Z",
+          id: "44",
+        },
+        {
+          createdAt: "Hudson, Greenfelder and Sawayn",
+          name: "Edmund Turcotte",
+          avatar:
+            "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/677.jpg",
+          City: "Dundalk",
+          Work: "2024-06-25T04:03:32.949Z",
+          id: "45",
+        },
+        {
+          createdAt: "Sawayn - Runolfsdottir",
+          name: "Dr. Roland Stracke",
+          avatar:
+            "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/791.jpg",
+          City: "Fort Pierce",
+          Work: "2024-06-25T17:39:15.032Z",
+          id: "46",
+        },
+        {
+          createdAt: "Fisher, Wiza and Goodwin",
+          name: "Ms. Katie Goyette",
+          avatar:
+            "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1216.jpg",
+          City: "Davie",
+          Work: "2024-06-25T11:32:36.387Z",
+          id: "47",
+        },
+        {
+          createdAt: "Douglas, Hintz and Mills",
+          name: "Mandy King",
+          avatar:
+            "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/890.jpg",
+          City: "Boston",
+          Work: "2024-06-25T08:10:53.623Z",
+          id: "48",
+        },
+        {
+          createdAt: "Feeney - Feest",
+          name: "Clifford DuBuque",
+          avatar:
+            "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1159.jpg",
+          City: "Hillsboro",
+          Work: "2024-06-25T07:08:59.244Z",
+          id: "49",
+        },
+        {
+          createdAt: "Feeney and Sons",
+          name: "Miss Ebony Kling",
+          avatar:
+            "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/414.jpg",
+          City: "Quincy",
+          Work: "2024-06-26T00:04:45.244Z",
+          id: "50",
+        },
+      ];
+      document.write(`<div class="container">`)
+        document.write(`<div class="row">`)
+        for (i = 0; i < arr.length; i++) {
+            document.write(`
+                <div class="col">
+                <div class="card mb-4" style="width: 22rem;">
+                <img src="${arr[i].avatar}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h4 class="card-title text-center">${arr[i].name}</h4>
+                    <h5 class="card-title">Name is :${arr[i].name}</h5>
+                    <h5 class="card-title">Create At: ${arr[i].createdAt}</h5>
+                    <h5 class="card-title">City is : ${arr[i].City}</h5>
+                    <h5 class="card-title">Work At: ${arr[i].Work}</h5>
+                    <h5 class="card-title">Id: ${arr[i].id}</h5>
+                </div>
+                </div>
+                </div>`);
+            }
+            document.write(`</div>`)
+      document.write(`</div>`)
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
