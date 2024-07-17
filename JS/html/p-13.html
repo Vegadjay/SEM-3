@@ -1,0 +1,145 @@
+    <!-- WAP to create a basic graphical Calculator using HTML and JavaScript. -->
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Basic Calc</title>
+        <style>
+            *{
+                padding: 0;
+                margin: 0;
+                box-sizing: border-box;
+                height: 100%;
+                width: 100%;
+            }
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .container {
+                height: 500px;
+                width: 500px;
+                display: grid;
+                place-items: center;
+            }
+            .buttons {
+                height: 300px;
+                width: 300px;
+            }
+            .btns{
+                height: 90px;
+                width: 100%;
+                display: flex;
+                gap: 14px;
+            }
+            button {
+                height: 60px;
+                width: 60px;
+                font-weight: 600;
+                font-family:'cascadia code','poppins',sans-serif;
+                border: 2px solid black;
+                border-radius: 50px;
+            }
+            button:hover {
+                background: linear-gradient(to bottom, #029394,#405920);
+                transform: scale(1.2);
+            }
+            .clear {
+                height: 40px;
+                width: 70px;
+            }
+            input {
+                height: 40px;
+                width: 300px;
+                border-top: transparent;
+                border-right: transparent;
+                border-left: transparent;
+                outline: none;
+                margin-top: 20px;
+                font-size: 30px;
+                margin-left: 30px;
+            }
+    </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="input">
+                <input type="text" id="box" placeholder="0">
+                <button class="clear" onclick="clearAll()">C</button>
+                <button class="clear" onclick="backSpace()"><-</button>
+            </div>
+            <div class="buttons">
+                <div class="btns">
+                    <button onclick="getChar('7')">7</button>
+                    <button onclick="getChar('8')">8</button>
+                    <button onclick="getChar('9')">9</button>
+                <button onclick="getChar('-')">-</button>
+                </div>
+
+                <!-- Add Second Div -->
+                <div class="btns">
+                    <button onclick="getChar('4')">4</button>
+                    <button onclick="getChar('5')">5</button>
+                    <button onclick="getChar('6')">6</button>
+                    <button onclick="getChar('+')">+</button>
+                </div>
+
+                
+                <div class="btns">
+                    <button onclick="getChar('1')">1</button>
+                    <button onclick="getChar('2')">2</button>
+                    <button onclick="getChar('3')">3</button>
+                    <button onclick="getChar('/')">/</button>
+    
+                </div>
+                <div class="btns">
+                    
+                    <button onclick="getChar('0')">0</button>
+                    <button onclick="getChar('.')">.</button>
+                    <button onclick="getChar('X')">X</button>
+                    <button onclick="printOp()">=</button>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            
+            function getChar(char) {
+                document.getElementById('box').value += char;
+            
+            }
+            function clearAll() {
+                document.getElementById('box').value = "";
+            }
+            function printOp() {
+                document.getElementById('box').value = eval(document.getElementById('box').value);
+                setTimeout(() => {
+                clearAll();
+            }, 5000);
+            }
+
+            function backSpace() {
+                document.getElementById('box').value = document.getElementById('box').value.slice(0,-1);;
+            }   
+            function printChar(e) {
+                console.log(e.value);
+            }
+            document.addEventListener('keydown', handleKeyPress);
+
+        function handleKeyPress(e) {
+            const key = e.key;
+            if (/^[0-9+\-*/.]$/.test(key)) {
+                document.getElementById('box').value += key;
+            } else if (key === 'Enter') {
+                printOp();
+            } else if (key === 'Backspace') {
+                backSpace();
+            } else if (key === 'Escape') {
+                clearAll();
+            }
+        }
+        </script>
+    </body>
+    </html>

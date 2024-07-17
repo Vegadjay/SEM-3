@@ -19,5 +19,6 @@ public class Lab_14 {
             }
             System.out.println("Here is the sum:: "+sum);
         }
+        sc.close();
     }
 }

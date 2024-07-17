@@ -10,5 +10,6 @@ public class P3 {
     } else {
       System.out.println(ch + " is consoant");
     }
+    input.close();
   }
 }

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>p-16</title>
+    <style>
+      #eventBox {
+        height: 100px;
+        width: 100px;
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="eventBox"></div>
+    <script>
+      document.getElementById("eventBox").addEventListener("click", () => {
+        console.log("Onclick is fire");
+      });
+      document.body.addEventListener("contextmenu", (e) => {
+        e.preventDefault();
+      });
+      document.body.addEventListener("dblclick", () => {
+        console.log("doubleclick is fire");
+      });
+      document.body.addEventListener("mousedown", () => {
+        console.log("Mousedown is fire");
+      });
+      document.body.addEventListener("mouseup", () => {
+        console.log("Mouseup is fire");
+      });
+      document.body.addEventListener("mouseenter", () => {
+        console.log("Mouseenter is fire");
+      });
+      document.body.addEventListener("mouseleave", () => {
+        console.log("Mouseleave is fire");
+      });
+      document.body.addEventListener("mousemove", () => {
+        console.log("Mousemove is fire");
+      });
+      document.body.addEventListener("mouseover", () => {
+        console.log("Mouseover is fire");
+      });
+      document.body.addEventListener("mouseup", () => {
+        console.log("Mouseup is fire");
+      });
+    </script>
+  </body>
+</html>

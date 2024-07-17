@@ -12,5 +12,6 @@ public class Lab_15 {
             }
             avg = sum / n;
             System.out.println("Here is the avg:: "+avg);
+            sc.close();
         }    
 }

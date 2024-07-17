@@ -24,5 +24,6 @@ public class Lab_17 {
         else {
             System.out.println("Array is not Contains Dup ele");
         }
+        sc.close();
     }
 }

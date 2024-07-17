@@ -9,5 +9,6 @@ public class P4 {
       fact = fact * i;
     }
     System.out.println(fact);
+    sc.close();
   }
 }

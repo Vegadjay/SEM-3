@@ -32,5 +32,6 @@ public class Lab_16 {
             }
         }
         System.out.println("here is the max of the array: "+ maxNum + "here is the min of the array: "+minNum);
+        sc.close();
     }
 }

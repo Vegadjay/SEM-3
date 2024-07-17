@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>p-17(Keyboard Event)</title>
+  </head>
+  <body>
+    <input type="text" id="text" />
+    <script>
+      var input = document.getElementById("text");
+      input.addEventListener("keydown", (e) => {
+        console.log("Key down is clicked");
+        console.log(e);
+      });
+      input.addEventListener("keypress", (e) => {
+        console.log("keypress is clicked");
+      });
+      input.addEventListener("keyup", (e) => {
+        console.log("keyup is clicked");
+      });
+    </script>
+  </body>
+</html>

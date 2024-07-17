@@ -6,5 +6,6 @@ public class P1 {
     System.out.print("Enter the radius of the circle: ");
     double radius = input.nextDouble();
     System.out.println("The area of the circle is " + radius * radius * Math.PI);
+    input.close();
   }
 }

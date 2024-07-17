@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab-14</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: url("https://www.bing.com/th/id/OGC.60133e2be25807978f55e04b01327a38?pid=1.7&rurl=http%3a%2f%2f49.media.tumblr.com%2fa9c59f5713ddad5fa6dcbbaba51ed95d%2ftumblr_o0cv8eCneD1v3hn15o1_500.gif&ehk=PuTuEFIiW0TtjBeVdQtF%2fRLtxCWUypKJE9ZB%2fy37qqE%3d");
+        }
+        .container {
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 350px;
+            backdrop-filter: blur(50px);
+        }
+        .loginName h1 {
+            text-align: center;
+            color: #1877f2;
+            margin-bottom: 1.5rem;
+            font-weight: 900;
+            font-size: 40px;
+        }
+        .email, .password {
+            margin-bottom: 1rem;
+        }
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #606770;
+        }
+        input[type="email"], input[type="password"] {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #dddfe2;
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+        .forgot-pass {
+            text-align: right;
+            margin-bottom: 1rem;
+        }
+        .forgot-pass a {
+            color: #1877f2;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        .forgot-pass a:hover {
+            text-decoration: underline;
+        }
+        .buttons {
+            text-align: center;
+        }
+        #submit {
+            background-color: #1877f2;
+            color: #ffffff;
+            border: none;
+            padding: 0.75rem 1rem;
+            border-radius: 6px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            width: 100%;
+        }
+        #submit:hover {
+            background-color: #166fe5;
+        }
+        #forgotpas {
+            text-decoration: underline;
+            color: blue;
+            cursor: pointer;
+        }
+        </style>
+<script src="
+https://cdn.jsdelivr.net/npm/sweetalert2@11.12.1/dist/sweetalert2.all.min.js
+"></script>
+<link href="
+https://cdn.jsdelivr.net/npm/sweetalert2@11.12.1/dist/sweetalert2.min.css
+" rel="stylesheet">
+</head> 
+<body>
+        <!-- WAP to create a static login page using HTML and JavaScript.  -->
+        <div class="container">
+                <!-- Add Login Page Here -->
+                <div class="loginName">
+                    <h1>Login Here</h1>
+                </div>
+                <!-- Add Input Boxes Here -->
+                    <div class="email">
+                        <label for="email">Enter Email:</label>
+                        <input type="email" name="email" id="email" required>
+                        
+                    </div>
+                    <div class="password">
+                        <label for="password">Enter Your password:</label>
+                        <input type="password" name="password" id="password">
+                    </div>
+                    <!-- Forgot Password here -->
+                    <div class="forgot-pass">   
+                        <p onclick="forgot()" id="forgotpas">Forgot Password?</p>
+                    </div>
+                <!-- Add Buttons Here -->
+                <div class="buttons">
+                    <input type="submit" value="submit" id="submit" onclick="submitfoam()">    
+                </div>
+        </div>
+    </div>
+    <script>
+        // Getting All the elements
+        var submitbtn = document.getElementById("submit");
+        
+        function forgot() {
+            Swal.fire({
+                    icon: "error",
+                    title: "HAVE KAI THAI EM NATHI BHULI JAA.....",
+                    text: "Something went wrong!",
+                    footer: '<a href="#">Why do I have this issue?</a>'
+                    });
+        }
+        submitfoam = (e) => {
+
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+            isEmail = false;
+            isPass = false;
+            // Email validation
+            emailregex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            if(emailregex.test(email)) {
+                console.log("Accept")
+                isEmail = true;
+            }
+            else  {
+                console.log("No")
+            }
+            // Password Validtion
+            passregex = /[0-9]{8,}/;
+            if(passregex.test(password)) {
+                console.log("Acceptable")
+                isPass = true;
+            }
+            else {
+                console.log("No")
+                
+            }
+            if(isEmail == true && isPass == true) {
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "Successfully Login",
+                    showConfirmButton: false,
+                    timer: 1500
+                    });
+                    window.location.href = "https://www.youtube.com/";
+                return;
+            }
+            if(isEmail == true && isPass == false) {
+                Swal.fire({
+                    icon: "error",
+                    title: "Password Is Wrong",
+                    text: "Something went wrong!",
+                    footer: '<a href="#">Why do I have this issue?</a>'
+                    });
+                return;
+            }
+            if(isEmail == false && isPass == true) {
+                Swal.fire({
+                    icon: "error",
+                    title: "Email Is Wrong",
+                    text: "Something went wrong!",
+                    footer: '<a href="#">Why do I have this issue?</a>'
+                    });
+                return;
+            }
+            if(isEmail == false && isPass == false) {
+                Swal.fire({
+                    icon: "error",
+                    title: "Both are Wrong",
+                    text: "Something went wrong!",
+                    footer: '<a href="#">Why do I have this issue?</a>'
+                    });
+                return;
+            }
+        }
+        </script>
+        
+</body>
+</html>
