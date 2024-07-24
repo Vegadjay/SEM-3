@@ -1,5 +1,4 @@
 // Write a program to sort elements of a linked list.
-// TODO: Find the bug this code is not print list.
 public class P_65 {
     class Node {
         int info;

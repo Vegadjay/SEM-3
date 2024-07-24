@@ -63,7 +63,7 @@ public class P_63 {
         while (isTrue) {
             n1.insert();
 
-            System.out.println("Enter 1 for adding more ele: ");
+            System.out.println("Enter 1 for addding : ");
             int ans = sc.nextInt();
 
             if (ans == 1) {
