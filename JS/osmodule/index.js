@@ -7,7 +7,7 @@ console.log(os.freemem()); // direct this is shown in byte
 console.log(os.freemem() / 1024 / 1024 / 1024, "GB"); // this is shown as gb
 console.log(os.networkInterfaces()); // this is showing the wifi configration
 console.log(os.release());
-e.g., '10.0.19042'
+// e.g., '10.0.19042'
 console.log(os.type());
-e.g., 'Linux', 'Darwin', 'Windows_NT'
-console.log(os.machine()) //x86_64
+// e.g., 'Linux', 'Darwin', 'Windows_NT'
+console.log(os.machine()); //x86_64
