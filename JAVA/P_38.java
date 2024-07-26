@@ -14,7 +14,7 @@ class S {
     }
 
     public void push(int x) {
-        if (top == size - 1) {
+        if (top >= size - 1) {
             System.out.println("Stack is overflow");
         } else {
             top++;
