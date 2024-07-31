@@ -1,21 +1,22 @@
 import java.util.Scanner;
 
-public class P_71 {
+public class P_72 {
 
     static class Node
     {
         int info;
-        Node link;
+        Node left;
+        Node right;
 
         Node(int value)
         {
             this.info = value;
-            this.link = null;
+            this.left = null;
+            this.right = null;
         }
     }
 
     static Node First = null;
-    static Node Last = null;
 
     public static void insertAtFirst()
     {
@@ -27,18 +28,12 @@ public class P_71 {
         if(First == null)
         {
             First = newNode;
-            Last = newNode;
-
-            First.link = Last;
-            Last.link = First;
         }
         else
         {
             Node next = First;
             First = newNode;
-            newNode.link = next;
-
-            Last.link = newNode;
+            newNode.right = next;
         }
     }
 
@@ -52,23 +47,16 @@ public class P_71 {
         if(First == null)
         {
             First = newNode;
-            Last = newNode;
-
-            First.link = Last;
-            Last.link = First;
         }
         else
         {
             Node next = First;
 
-            while (next.link != First) {
-                next = next.link;
+            while (next.right != null) {
+                next = next.right;
             }
 
-            next.link = newNode;
-            newNode.link = First;
-
-            Last = newNode;
+            next.right = newNode;
         }
     }
 
@@ -86,30 +74,28 @@ public class P_71 {
         Node current = First;
 
         if (index == 1) {
-            if (First.link == First) { 
+            if (First.right == null) { 
                 First = null;
-                Last = null;
                 return;
             }
 
-            while (current.link != First) {
-                current = current.link;
-            }
-            current.link = First.link; 
-            First = First.link; 
+           First = First.right;
+           First.left = null;
             return;
         }
 
         int i = 1;
-        for (i = 1; current.link != First && i < index - 1; i++) {
-            current = current.link;
+        Node pre = null;
+        for (i = 1; current.right != null && i < index - 1; i++) {
+            pre = current;
+            current = current.right;
         }
 
-        if (current.link == First || current.link.link == First) {
+        if (current.right == null) {
             if(i+1 == index)
             {
-                current.link = First;
-                Last = current;
+                pre.right = current.right;
+                current.left = pre;
             }
             else
             {
@@ -117,7 +103,7 @@ public class P_71 {
             }
         }
 
-        current.link = current.link.link;
+        current.right = current.right.right;
     }
 
     public static void display_List()
@@ -130,17 +116,14 @@ public class P_71 {
             return;
         }
 
-        while (temp.link != First) {
+        while (temp != null) {
             System.out.print(temp.info + " ");
-            temp = temp.link;
+            temp = temp.right;
         }
-
-        System.out.println(temp.info);
     }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        P_71 node = new P_71();
-
+        P_72 node = new P_72();
         boolean isTrue = true;
 
         while (isTrue) {
