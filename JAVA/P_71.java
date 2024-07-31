@@ -17,7 +17,7 @@ public class P_71 {
     static Node First = null;
     static Node Last = null;
 
-    public static void insertAtFirst()
+    public void insertAtFirst()
     {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter value of node : ");
@@ -42,7 +42,7 @@ public class P_71 {
         }
     }
 
-    public static void insertAtLast()
+    public void insertAtLast()
     {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter value of node : ");
@@ -72,7 +72,7 @@ public class P_71 {
         }
     }
 
-    public static void delete()
+    public void delete()
     {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter index to delete node : ");
@@ -120,7 +120,7 @@ public class P_71 {
         current.link = current.link.link;
     }
 
-    public static void display_List()
+    public void display_List()
     {
         Node temp = First;
 
