@@ -17,6 +17,30 @@ app.post("/login",(req,res)=>{
     res.send("Data saved")
 })
 
+app.get("/details", async (req,res)=>{
+    try { 
+        const user = await User.find();
+        res.send(user);
+    } catch(e) {
+        console.log(e);
+    }
+})
+
+app.get("/find/:email",(req,res)=>{
+    try{
+        User.findOne({email:req.params.email}).then((data)=>{
+            res.status(200).json(data);
+            console.log("Data founded")
+        }).catch((e)=>{
+            console.log(e);
+        })
+    } catch(e) {
+        res.status(404).json({
+            msg:"User not found"
+        })
+    }
+})
+
 app.listen(3000,()=>{
     console.log("Server is started");
 });
