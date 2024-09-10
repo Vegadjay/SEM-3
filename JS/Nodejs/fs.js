@@ -9,7 +9,6 @@ const fs = require("fs");
 //   }
 // });
 
-// ! This method write the file.
 
 // fs.writeFile("test.txt", "Hello World", (err) => {
 //   if (err) {
